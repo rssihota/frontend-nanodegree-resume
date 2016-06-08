@@ -24,7 +24,74 @@ var bio = {
     "skills" : ["organized", " punctual", " team player", " c language"]
 };
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var education = {
+    "school" : [
+        {
+            "name" : "University of Waterloo",
+            "degree" : "Bachelor of Science",
+            "grad" : "2014",
+            "city" : "Waterloo, ON",
+            "major": "Biology"
+        },
+        {
+            "name" : "University of Guelph",
+            "degree" : "Bachelor of Computing",
+            "grad" : "2017",
+            "city" : "Guelph, ON",
+            "major" : "Computer Science"
+        }
+    ],
+    "online" : [
+        {
+            "title" : "How to Use Git and Github",
+            "school" : "Udacity",
+            "date" : "2016"
+        },
+        {
+            "title" : "Intro to HTML and CSS",
+            "school" : "Udacity",
+            "date" : "2016"
+        },
+        {
+            "title" : "Javascript Basics",
+            "school" : "Udacity",
+            "date" : "2016"
+        }
+    ]
+}
+
+var experience = {
+    "work" : [
+        {
+            "position" : " Volunteer",
+            "employer" : "Community Support Connections",
+            "years" : "Oct.2011 - April.2014",
+            "city" : "Waterloo, ON",
+            "description" : "Assist seniors with simple exercises to help maintain their independent lifestyle."
+        },
+        {
+            "position" : " Job Shadowing",
+            "employer" : "Marcos Pharmacy",
+            "years" : "May.2011 - Sept.2011",
+            "city" : "Mississauga, ON",
+            "description" : "Count inventory and expiry dates of items, stock shelves, and work the cashier."
+        }
+    ],
+    "project" : [
+        {
+            "title" : "Library Search Engine",
+            "dates" : "December.2015",
+            "description" : "Developed a search engine for library books and journals in Java. Completed as a series of assignments for Object Oriented Programming class at the University of Guelph."
+        },
+        {
+            "title" : "iCal Software Application",
+            "dates" : "April.2016",
+            "description" : "Completed as a series of assignemnts for Software Systems Development class at the University of Guelph. Integrate C language backend to Python - TKinter GUI frontend with an SQL database."
+        }
+    ]
+}
+
+/*var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contact);
@@ -90,4 +157,4 @@ $(".education-entry").append(formattedSchool);
 $(".education-entry").append(formattedDegree);
 $(".education-entry").append(formattedYears);
 $(".education-entry").append(formattedSchoolLocation);
-$(".education-entry").append(formattedMajor);
+$(".education-entry").append(formattedMajor);*/
