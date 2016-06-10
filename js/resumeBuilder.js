@@ -67,14 +67,14 @@ var experience = {
             "employer" : "Community Support Connections",
             "years" : "Oct.2011 - April.2014",
             "city" : "Waterloo, ON",
-            "description" : "Assist seniors with simple exercises to help maintain their independent lifestyle."
+            "description" : "One on one exercise sessions in a senior's home to help them maintain mobility and independence. Worked with four clients since joining the program. Sessions are usually one hour and occur over twelve weeks. Received certification of participation in a leadership course for the Home Support Exercise Program (HSEP) established by the CCAA."
         },
         {
             "position" : " Job Shadowing",
             "employer" : "Marcos Pharmacy",
             "years" : "May.2011 - Sept.2011",
             "city" : "Mississauga, ON",
-            "description" : "Count inventory and expiry dates of items, stock shelves, and work the cashier."
+            "description" : "Count inventory and expiry dates of items. Check incoming items and stock shelves. Count prescription pill and label containers. Work the cashier by accepting cash, debit cards and credit cards."
         }
     ],
     "project" : [
@@ -91,7 +91,7 @@ var experience = {
     ]
 }
 
-/*var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contact);
@@ -103,7 +103,6 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
 
 var formattedPic = HTMLbioPic.replace("%data%", bio.picture);
 var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.msg);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
@@ -114,18 +113,44 @@ $("#topContacts").append(formattedGithub);
 $("#topContacts").append(formattedLocation);
 $("#header").append(formattedPic);
 $("#header").append(formattedMsg);
-$("#header").append(HTMLskillsStart);
-$("#skills").append(formattedSkills);
 
-var work = {
-    "position" : " Volunteer",
-    "employer" : "Community Support Connections",
-    "years" : "Oct.2012 - April.2014",
-    "city" : "Waterloo, ON",
-    "description" : "Assist seniors with simple exercises to help maintain their independent lifestyle."
-};
+if (bio.skills.length !== 0) {
+    $("#header").append(HTMLskillsStart);
+    var formattedSkills = ""
+    for (theSkill in bio.skills) {
+        formattedSkills = HTMLskills.replace("%data%", bio.skills[theSkill]);
+        $("#skills").append(formattedSkills);
+    }
+}
 
-var formattedPosition = HTMLworkTitle.replace("%data%", work.position);
+if (experience.work.length !== 0) {
+    for (job in experience.work) {
+        $("#workExperience").append(HTMLworkStart);
+        var formattedCompany = HTMLworkEmployer.replace("%data%", experience.work[job].employer);
+        var formattedPosition = HTMLworkTitle.replace("%data%", experience.work[job].position);
+        var formattedDate = HTMLworkDates.replace("%data%", experience.work[job].years);
+        var formattedCity = HTMLworkLocation.replace("%data%", experience.work[job].city);
+        var formattedDescription = HTMLworkDescription.replace("%data%", experience.work[job].description);
+
+        $(".work-entry:last").append(formattedCompany + formattedPosition);
+        $(".work-entry:last").append(formattedDate);
+        $(".work-entry:last").append(formattedCity);
+        $(".work-entry:last").append(formattedDescription);
+    }
+}
+
+$("#main").append(internationalizeButton);
+
+function inName(name) {
+    var names = name.trim().split(" ");
+    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+    names[1] = names[1].toUpperCase();
+
+    return names[0] + " " + names[1];
+}
+
+
+/*var formattedPosition = HTMLworkTitle.replace("%data%", work.position);
 var formattedCompany = HTMLworkEmployer.replace("%data%", work.employer);
 var formattedDate = HTMLworkDates.replace("%data%", work.years);
 var formattedCity = HTMLworkLocation.replace("%data%", work.city);
