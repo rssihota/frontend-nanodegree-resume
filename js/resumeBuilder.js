@@ -208,37 +208,3 @@ function inName(name) {
 }
 
 $("#mapDiv").append(googleMap);
-
-/*var formattedPosition = HTMLworkTitle.replace("%data%", work.position);
-var formattedCompany = HTMLworkEmployer.replace("%data%", work.employer);
-var formattedDate = HTMLworkDates.replace("%data%", work.years);
-var formattedCity = HTMLworkLocation.replace("%data%", work.city);
-var formattedDescription = HTMLworkDescription.replace("%data%", work.description);
-
-$("#workExperience").append(HTMLworkStart);
-$(".work-entry").append(formattedCompany);
-$(".work-entry").append(formattedPosition);
-$(".work-entry").append(formattedDate);
-$(".work-entry").append(formattedCity);
-$(".work-entry").append(formattedDescription);
-
-var school = {
-    "name" : "University of Guelph",
-    "degree" : "Bachelor of Computing",
-    "years" : "2014 - Present",
-    "city" : "Guelph, ON",
-    "major" : "Computer Science"
-};
-
-var formattedSchool = HTMLschoolName.replace("%data%", school["name"]);
-var formattedDegree = HTMLschoolDegree.replace("%data%", school["degree"]);
-var formattedYears = HTMLschoolDates.replace("%data%", school["years"]);
-var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school["city"]);
-var formattedMajor = HTMLschoolMajor.replace("%data%", school["major"]);
-
-$("#education").append(HTMLschoolStart);
-$(".education-entry").append(formattedSchool);
-$(".education-entry").append(formattedDegree);
-$(".education-entry").append(formattedYears);
-$(".education-entry").append(formattedSchoolLocation);
-$(".education-entry").append(formattedMajor);*/
